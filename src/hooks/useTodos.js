@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { useEffect } from "react";
 
 const url = "http://localhost:3001/todos";
 
@@ -23,10 +22,14 @@ export default function useTodos() {
     await getTodos();
   }
 
+  async function updateTodo(todo) {
+    await axios.put(`${url}/${todo.id}`, todo);
+    await getTodos();
+  }
+
   useEffect(() => {
-    console.log("GET");
     getTodos();
   }, []);
 
-  return { todos, getTodos, deleteTodo, addTodo };
+  return { todos, getTodos, deleteTodo, addTodo, updateTodo };
 }

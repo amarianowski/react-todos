@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function Sidenav() {
   return (
     <aside
@@ -14,7 +12,7 @@ export default function Sidenav() {
               href="/"
               className="nav-link d-flex align-items-center gap-2 active"
             >
-              <i class="bi bi-house"></i>
+              <i className="bi bi-house"></i>
               <span>Todos</span>
             </a>
           </li>
@@ -23,7 +21,7 @@ export default function Sidenav() {
               href="/"
               className="nav-link d-flex align-items-center gap-2 active"
             >
-              <i class="bi bi-calendar2-day"></i>
+              <i className="bi bi-calendar2-day"></i>
               <span>Today</span>
             </a>
           </li>
@@ -32,7 +30,7 @@ export default function Sidenav() {
               href="/"
               className="nav-link d-flex align-items-center gap-2 active"
             >
-              <i class="bi bi-code-slash"></i>
+              <i className="bi bi-code-slash"></i>
               <span>Programming</span>
             </a>
           </li>
@@ -41,7 +39,7 @@ export default function Sidenav() {
               href="/"
               className="nav-link d-flex align-items-center gap-2 active"
             >
-              <i class="bi bi-suitcase-lg"></i>
+              <i className="bi bi-suitcase-lg"></i>
               <span>Work</span>
             </a>
           </li>
@@ -50,7 +48,7 @@ export default function Sidenav() {
               href="/"
               className="nav-link d-flex align-items-center gap-2 active"
             >
-              <i class="bi bi-basket"></i>
+              <i className="bi bi-basket"></i>
               <span>Shopping</span>
             </a>
           </li>
@@ -59,7 +57,7 @@ export default function Sidenav() {
 
       <div className="d-flex justify-content-center mt-5">
         <button className="btn btn-outline-success w-75 d-flex justify-content-center gap-2">
-          <i class="bi bi-folder-plus"></i>
+          <i className="bi bi-folder-plus"></i>
           <span>add new list</span>
         </button>
       </div>
