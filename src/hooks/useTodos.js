@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import useTodosContext from "./useTodosContext";
 
 const url = "http://localhost:3001/todos";
 
 export default function useTodos() {
-  const [todos, setTodos] = useState([]);
+  const { actions } = useTodosContext();
 
   async function getTodos() {
     const res = await axios.get(url);
-    setTodos(res.data);
+    actions.setTodos(res.data);
   }
 
   async function deleteTodo(id) {
@@ -31,5 +32,5 @@ export default function useTodos() {
     getTodos();
   }, []);
 
-  return { todos, getTodos, deleteTodo, addTodo, updateTodo };
+  return { getTodos, deleteTodo, addTodo, updateTodo };
 }
