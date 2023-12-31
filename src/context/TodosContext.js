@@ -2,7 +2,7 @@ import { createContext, useReducer } from "react";
 
 export const TodosContext = createContext();
 
-export const TodosReducer = (state, action) => {
+export function TodosReducer(state, action) {
   if (action.type === "SET_TODOS") {
     return { ...state, todos: action.payload };
   }
@@ -30,7 +30,7 @@ export const TodosReducer = (state, action) => {
   }
 
   return state;
-};
+}
 
 export function TodosContextProvider({ children }) {
   const [state, dispatch] = useReducer(TodosReducer, { todos: [] });
@@ -42,7 +42,7 @@ export function TodosContextProvider({ children }) {
     updateTodo: (todo) => dispatch({ type: "UPDATE_TODO", payload: todo }),
   };
 
-  console.log(state);
+  console.log("TODOS CONTEXT", state);
 
   return (
     <TodosContext.Provider value={{ ...state, actions }}>
