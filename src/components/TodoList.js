@@ -16,7 +16,9 @@ export default function TodoList() {
   }
 
   useEffect(() => {
-    setFilteredTodos(todos);
+    const sortedTodos = [...todos].sort((a, b) => a.completed - b.completed);
+
+    setFilteredTodos(sortedTodos);
   }, [todos]);
 
   return (

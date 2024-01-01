@@ -12,6 +12,11 @@ export default function useTodos() {
     actions.setTodos(res.data);
   }
 
+  async function getTodoById(id) {
+    const res = await axios.get(`${url}/${id}`);
+    return res.data;
+  }
+
   async function deleteTodo(id) {
     await axios.delete(`${url}/${id}`);
     await getTodos();
@@ -28,9 +33,14 @@ export default function useTodos() {
     await getTodos();
   }
 
+  async function toggleTodo(id) {
+    const todo = await getTodoById(id);
+    await updateTodo({ ...todo, completed: !todo.completed });
+  }
+
   useEffect(() => {
     getTodos();
   }, []);
 
-  return { getTodos, deleteTodo, addTodo, updateTodo };
+  return { getTodos, deleteTodo, addTodo, updateTodo, toggleTodo };
 }
