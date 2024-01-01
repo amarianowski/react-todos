@@ -8,22 +8,12 @@
     {
       "id": 965,
       "title": "Go somewhere else",
-      "completed": false
+      "completed": true
     },
     {
       "id": 907,
       "title": "go somewhere",
       "completed": false
-    },
-    {
-      "id": 585,
-      "title": "go buy 121023910831018301383012 eggs",
-      "completed": false
-    },
-    {
-      "id": 5,
-      "title": "go buy 2-19-0212-1-0121299120209012901212908029839802390832908329082390832908390823908239082309823 kapciow",
-      "completed": true
     }
   ]
 }

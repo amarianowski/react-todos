@@ -23,7 +23,11 @@ export default function TodoDetails({ todo }) {
       style={{ textDecoration: todo.completed ? "line-through" : "none" }}
     >
       <button
-        className="btn btn-outline-success me-3"
+        className={
+          todo.completed
+            ? "btn btn-success me-3"
+            : "btn btn-outline-success me-3"
+        }
         onClick={() => toggleTodo(todo.id)}
       >
         <i class="bi bi-check-lg"></i>
