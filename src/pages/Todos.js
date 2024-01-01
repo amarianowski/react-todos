@@ -8,13 +8,13 @@ export default function Todos() {
   const { loading, error } = useTodos();
 
   return (
-    <div className="px-5">
+    <div className="px-5 mb-5">
       <SEO title="Todos" />
 
-      <h2 className="mb-4">Todos</h2>
       {loading && <Spinner />}
       {!loading && !error && (
         <>
+          <h2 className="mb-4">Todos</h2>
           <TodoList />
           <TodoForm />
         </>

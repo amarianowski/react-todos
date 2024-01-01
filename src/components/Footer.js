@@ -2,7 +2,7 @@ import logo from "../assets/logo.svg";
 
 export default function Footer() {
   return (
-    <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top mt-auto">
+    <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top mt-5">
       <p className="col-md-4 mb-0 text-body-secondary">2024 React-todos</p>
 
       <a

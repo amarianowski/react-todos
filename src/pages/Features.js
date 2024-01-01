@@ -6,7 +6,7 @@ import SEO from "../components/SEO";
 export default function Features() {
   const { theme } = useThemeContext();
   return (
-    <div class="container px-4 py-5" id="featured-3">
+    <div class=" px-4 py-5" id="featured-3">
       <SEO title={"Features"} />
 
       <h2 class="pb-2 border-bottom">Explore React-Todos features</h2>
