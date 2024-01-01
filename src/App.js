@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Features from "./pages/Features";
 import Pricing from "./pages/Pricing";
 import Home from "./pages/Home";
+import Footer from "./components/Footer";
 
 const appRoutes = [
   { path: "/", element: <Todos /> },
@@ -31,11 +32,11 @@ export default function App() {
         <Header />
         <div
           className="d-flex"
-          style={{ minHeight: "93vh", maxHeight: "93vh", height: "100%" }}
+          style={{ minHeight: "92vh", maxHeight: "92vh", height: "100%" }}
         >
           <Sidenav />
           <main
-            className="p-4 w-100"
+            className="p-4 w-100 d-flex flex-column"
             style={{
               minHeight: "93vh",
               maxHeight: "93vh",
@@ -48,6 +49,7 @@ export default function App() {
                 <Route key={index} path={route.path} element={route.element} />
               ))}
             </Routes>
+            <Footer />
           </main>
         </div>
       </Router>
