@@ -1,9 +1,11 @@
 import PricingCards from "../components/PricingCards";
 import PricingTable from "../components/PricingTable";
+import SEO from "../components/SEO";
 
 export default function Pricing() {
   return (
     <div className="p-3">
+      <SEO title="Pricing" />
       <div class="pricing-header p-3 pb-md-4 mx-auto text-center w-50">
         <h1 class="display-4 fw-normal text-body-emphasis">Pricing</h1>
         <p class="fs-5 text-body-secondary">

@@ -6,13 +6,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { TodosContextProvider } from "./context/TodosContext";
 import { ThemeContextProvider } from "./context/ThemeContext";
+import { HelmetProvider } from "react-helmet-async";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
   <TodosContextProvider>
     <ThemeContextProvider>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </ThemeContextProvider>
   </TodosContextProvider>
   // </React.StrictMode>

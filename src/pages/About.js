@@ -1,11 +1,14 @@
 import screenshotLight from "../assets/screenshot-light.png";
 import screenshotDark from "../assets/screenshot-dark.png";
 import useThemeContext from "../hooks/useThemeContext";
+import SEO from "../components/SEO";
 
 export default function About() {
   const { theme } = useThemeContext();
   return (
     <div>
+      <SEO title={"About"} />
+
       <div className="px-4 pt-5 my-5 text-center border-bottom">
         <h1 className="display-4 fw-bold text-body-emphasis">React Todos </h1>
         <div className="col-lg-6 mx-auto">

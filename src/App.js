@@ -9,6 +9,7 @@ import Features from "./pages/Features";
 import Pricing from "./pages/Pricing";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import { HelmetProvider } from "react-helmet-async";
 
 const appRoutes = [
   { path: "/", element: <Todos /> },
@@ -19,6 +20,8 @@ const appRoutes = [
   { path: "/todos", element: <Todos /> },
 ];
 
+const helmetContext = {};
+
 export default function App() {
   const { theme } = useThemeContext();
 
@@ -28,31 +31,37 @@ export default function App() {
 
   return (
     <div className="app" style={{ overflow: "hidden" }}>
-      <Router>
-        <Header />
-        <div
-          className="d-flex"
-          style={{ minHeight: "92vh", maxHeight: "92vh", height: "100%" }}
-        >
-          <Sidenav />
-          <main
-            className="p-4 w-100 d-flex flex-column"
-            style={{
-              minHeight: "93vh",
-              maxHeight: "93vh",
-              height: "100%",
-              overflowY: "scroll",
-            }}
+      <HelmetProvider context={helmetContext}>
+        <Router>
+          <Header />
+          <div
+            className="d-flex"
+            style={{ minHeight: "92vh", maxHeight: "92vh", height: "100%" }}
           >
-            <Routes>
-              {appRoutes.map((route, index) => (
-                <Route key={index} path={route.path} element={route.element} />
-              ))}
-            </Routes>
-            <Footer />
-          </main>
-        </div>
-      </Router>
+            <Sidenav />
+            <main
+              className="p-4 w-100 d-flex flex-column"
+              style={{
+                minHeight: "93vh",
+                maxHeight: "93vh",
+                height: "100%",
+                overflowY: "scroll",
+              }}
+            >
+              <Routes>
+                {appRoutes.map((route, index) => (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    element={route.element}
+                  />
+                ))}
+              </Routes>
+              <Footer />
+            </main>
+          </div>
+        </Router>
+      </HelmetProvider>
     </div>
   );
 }

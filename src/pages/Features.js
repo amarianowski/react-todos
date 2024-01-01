@@ -1,11 +1,14 @@
 import screenshotLight from "../assets/screenshot-light.png";
 import screenshotDark from "../assets/screenshot-dark.png";
 import useThemeContext from "../hooks/useThemeContext";
+import SEO from "../components/SEO";
 
 export default function Features() {
   const { theme } = useThemeContext();
   return (
     <div class="container px-4 py-5" id="featured-3">
+      <SEO title={"Features"} />
+
       <h2 class="pb-2 border-bottom">Explore React-Todos features</h2>
       <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="feature col">
