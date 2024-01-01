@@ -19,6 +19,9 @@ export default function TodoDetails({ todo }) {
 
   return (
     <div className=" border p-2 rounded d-flex align-items-center">
+      <button className="btn btn-outline-success me-3">
+        <i class="bi bi-check-lg"></i>
+      </button>
       {!isEditing && <span onClick={handleToggleEdit}>{todo.title}</span>}
       {isEditing && (
         <input
