@@ -29,7 +29,6 @@ export default function App() {
               style={{ minHeight: "93vh", overflowY: "scroll" }}
             >
               <AppRouter />
-              <Footer />
             </main>
           </div>
         </Router>

@@ -1,4 +1,6 @@
 import { useLocation } from "react-router-dom";
+import Footer from "./Footer";
+import undrawMoments from "../assets/undraw/undraw-moments.svg";
 
 const lists = [
   { name: "Todos", icon: "bi bi-house" },
@@ -15,7 +17,7 @@ export default function Sidenav() {
     <>
       {(location.pathname === "/" || location.pathname === "/todos") && (
         <aside
-          className="sidenav border-end p-3 d-flex flex-column justify-content-between"
+          className="sidenav border-end p-3 d-flex flex-column"
           style={{ width: "18vw" }}
         >
           <nav className="mt-2">
@@ -38,12 +40,24 @@ export default function Sidenav() {
             </ul>
           </nav>
 
-          <div className="d-flex justify-content-center mt-5">
+          <div className="d-flex flex-column align-items-center justify-content-center mt-auto">
+            <img
+              src={undrawMoments}
+              style={{
+                width: "10em",
+                display: "block",
+                marginLeft: "auto",
+                marginRight: "auto",
+              }}
+            />
+
             <button className="btn btn-outline-success w-75 d-flex justify-content-center gap-2">
               <i className="bi bi-folder-plus"></i>
               <span>add new list</span>
             </button>
           </div>
+
+          <Footer />
         </aside>
       )}
     </>
