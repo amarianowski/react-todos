@@ -13,9 +13,7 @@ root.render(
   // <React.StrictMode>
   <TodosContextProvider>
     <ThemeContextProvider>
-      <HelmetProvider>
-        <App />
-      </HelmetProvider>
+      <App />
     </ThemeContextProvider>
   </TodosContextProvider>
   // </React.StrictMode>

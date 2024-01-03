@@ -1,26 +1,11 @@
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "./components/Header";
 import Sidenav from "./components/Sidenav";
 import useThemeContext from "./hooks/useThemeContext";
-import Todos from "./pages/Todos";
-import About from "./pages/About";
-import Features from "./pages/Features";
-import Pricing from "./pages/Pricing";
-import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import { HelmetProvider } from "react-helmet-async";
-
-const appRoutes = [
-  { path: "/", element: <Todos /> },
-  { path: "/about", element: <About /> },
-  { path: "/features", element: <Features /> },
-  { path: "/pricing", element: <Pricing /> },
-  { path: "/home", element: <Home /> },
-  { path: "/todos", element: <Todos /> },
-];
-
-const helmetContext = {};
+import AppRouter from "./AppRouter";
 
 export default function App() {
   const { theme } = useThemeContext();
@@ -31,7 +16,7 @@ export default function App() {
 
   return (
     <div className="app" style={{ overflow: "hidden" }}>
-      <HelmetProvider context={helmetContext}>
+      <HelmetProvider>
         <Router>
           <Header />
           <div
@@ -41,23 +26,9 @@ export default function App() {
             <Sidenav />
             <main
               className="p-4 w-100 d-flex flex-column"
-              style={{
-                minHeight: "93vh",
-                maxHeight: "93vh",
-                height: "100%",
-                overflowY: "scroll",
-              }}
+              style={{ minHeight: "93vh", overflowY: "scroll" }}
             >
-              <Routes>
-                {appRoutes.map((route, index) => (
-                  <Route
-                    key={index}
-                    path={route.path}
-                    element={route.element}
-                  />
-                ))}
-              </Routes>
-              <Footer />
+              <AppRouter />
             </main>
           </div>
         </Router>

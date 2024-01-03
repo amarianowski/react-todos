@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function TodoDetails({ todo }) {
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState(todo.title);
-  const { deleteTodo, updateTodo } = useTodos();
+  const { deleteTodo, updateTodo, toggleTodo } = useTodos();
 
   function handleKeyDown(e) {
     if (e.key === "Enter") {
@@ -18,7 +18,20 @@ export default function TodoDetails({ todo }) {
   }
 
   return (
-    <div className=" border p-2 rounded d-flex align-items-center">
+    <div
+      className=" border p-2 rounded d-flex align-items-center"
+      style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+    >
+      <button
+        className={
+          todo.completed
+            ? "btn btn-success me-3"
+            : "btn btn-outline-success me-3"
+        }
+        onClick={() => toggleTodo(todo.id)}
+      >
+        <i class="bi bi-check-lg"></i>
+      </button>
       {!isEditing && <span onClick={handleToggleEdit}>{todo.title}</span>}
       {isEditing && (
         <input

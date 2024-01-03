@@ -1,8 +1,10 @@
 import { useState } from "react";
 import useTodos from "../hooks/useTodos";
+import useTodosContext from "../hooks/useTodosContext";
 
 export default function TodoForm() {
   const [title, setTitle] = useState("");
+  const { todos } = useTodosContext();
   const { addTodo } = useTodos();
 
   function handleSubmit(e) {
@@ -18,7 +20,12 @@ export default function TodoForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-100 d-flex gap-3 mt-3 border rounded p-2"
+      // className="w-100 d-flex gap-3 mt-3 border rounded p-2"
+      className={
+        todos.length >= 1
+          ? "w-100 d-flex gap-3 mt-3 border rounded p-2"
+          : "w-25 d-flex gap-3 mt-3 border rounded p-2 mx-auto"
+      }
     >
       <input
         className="form-control"
